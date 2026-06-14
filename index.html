@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keerthan M | Software Engineer</title>
+    <meta name="description" content="Portfolio of Keerthan M, Software Engineer specializing in Data Science and Full Stack Development.">
+    <meta name="keywords" content="Keerthan M, Software Engineer, Portfolio, Developer, Data Science, React, Python">
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #cbd5e1;
+            --text-heading: #f8fafc;
+            --primary: #06b6d4; /* Cyan */
+            --secondary: #10b981; /* Emerald */
+        }
+    }
+
+    @layer base {
+        body {
+            @apply bg-[var(--bg-dark)] text-[var(--text-main)] font-['Inter',sans-serif] antialiased leading-relaxed;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            @apply text-[var(--text-heading)] font-semibold tracking-tight;
+        }
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+    }
+
+    @layer components {
+        .section-container {
+            @apply max-w-5xl mx-auto px-6 py-20 md:py-32;
+        }
+        .section-title {
+            @apply flex items-center gap-4 text-2xl md:text-3xl font-bold mb-12;
+        }
+        .section-title::before {
+            content: "";
+            @apply block h-px w-12 bg-[var(--primary)] opacity-50;
+        }
+        .section-title::after {
+            content: "";
+            @apply block h-px flex-1 bg-slate-800;
+        }
+        .card {
+            @apply bg-[var(--bg-card)] border border-slate-800 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)] hover:shadow-[0_4px_20px_rgba(6,182,212,0.1)];
+        }
+        .tech-tag {
+            @apply text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-[var(--primary)] border border-slate-700;
+        }
+    }
+
+    @layer utilities {
+        .text-gradient {
+            @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)];
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .animate-fade-in-up-delay-1 { animation: fadeInUp 0.8s ease-out 0.2s forwards; opacity: 0; }
+        .animate-fade-in-up-delay-2 { animation: fadeInUp 0.8s ease-out 0.4s forwards; opacity: 0; }
+        .animate-fade-in-up-delay-3 { animation: fadeInUp 0.8s ease-out 0.6s forwards; opacity: 0; }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    }
+    </style>
+</head>
+<body class="selection:bg-[var(--primary)] selection:text-white">
+    <div id="root"></div>
+    
+    <script type="text/babel" src="components/Loader.js"></script>
+    <script type="text/babel" src="components/Reveal.js"></script>
+    <script type="text/babel" src="components/Navbar.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/About.js"></script>
+    <script type="text/babel" src="components/Experience.js"></script>
+    <script type="text/babel" src="components/Projects.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
